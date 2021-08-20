@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Quiz from "react-quiz-component"
-import { quiz } from './quiz';
+import { quiz } from "./quiz"
 
 const BlogPostTemplate = ({ data, location }) => {
-  const [quizResult, setQuizResult] = useState();
+  const [quizResult, setQuizResult] = useState()
 
   useEffect(() => {
-      if(quizResult) {
-          console.log('quizResult', quizResult);
-      }
-  }, [quizResult]);
+    if (quizResult) {
+      console.log("quizResult", quizResult)
+    }
+  }, [quizResult])
 
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -28,9 +28,9 @@ const BlogPostTemplate = ({ data, location }) => {
       />
       <Quiz
         quiz={quiz}
-        shuffle={true}
+        //shuffle={true}
         showInstantFeedback={true}
-        continueTillCorrect={true}
+        //continueTillCorrect={true}
         onComplete={setQuizResult}
       />
     </Layout>
