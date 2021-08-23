@@ -20,7 +20,7 @@ exports.handler = async function (event) {
         statusCode: 200,
         body: JSON.stringify({
           error: "1",
-          message: "Forkert email eller password",
+          message: "Email or password is incorrect.",
         }),
       }
     }
@@ -31,6 +31,14 @@ exports.handler = async function (event) {
     if (connection) {
       await connection.end()
     }
+  }
+  return {
+    statusCode: 200,
+    body: JSON.stringify({
+      error: "0",
+      emailId: existUserResult[0].user_email,
+      message: "User logged in",
+    }),
   }
 }
 

@@ -331,3 +331,12 @@ a:focus {
     list-style-position: inside;
   }
 }
+
+.loginInput {
+  border-radius: 0px !important;
+}
+
+.loginButton {
+  border-radius: 0px !important;
+  margin-top: 10px;
+}

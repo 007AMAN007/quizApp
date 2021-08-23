@@ -7,6 +7,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import "bootstrap/dist/css/bootstrap.min.css"
+import Cookies from "universal-cookie"
 
 const BlogLogin = ({ data, location }) => {
   const [email, setEmail] = useState("")
@@ -15,21 +16,34 @@ const BlogLogin = ({ data, location }) => {
   const [message, setMessage] = useState("")
   const [messageColor, setMessageColor] = useState("")
   const [isFormSubmitted, setIsFormSubmitted] = useState(false)
+  const [showPage, setShowPage] = useState(false)
+
+  useEffect(() => {
+    const cookies = new Cookies()
+    if (cookies.get("quizLoggedInUser")) {
+      setShowPage(false)
+      window.location.href = "/authorquiz"
+    } else {
+      setShowPage(true)
+    }
+  }, [])
 
   function validateForm() {
     return email.length > 0 && password.length > 0
   }
   async function handleSubmit(event) {
     event.preventDefault()
+    setMessage("")
     setShowMessage(false)
     setIsFormSubmitted(true)
     if (password.length < 6) {
       setMessageColor("red")
-      setMessage("Password længde skal være mindst seks.")
+      setMessage("Password should be greater than six characters.")
       setShowMessage(true)
       setIsFormSubmitted(false)
       return
     }
+    const cookies = new Cookies()
     await fetch("/.netlify/functions/user-login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
@@ -41,14 +55,19 @@ const BlogLogin = ({ data, location }) => {
           setMessage(responseJson.message)
           setIsFormSubmitted(false)
         } else {
-          window.location.href = "/author-quiz"
+          await cookies.set("quizLoggedInUser", email, {
+            path: "/",
+            maxAge: 31536000,
+          })
+          window.location.href = "/authorquiz"
         }
+        setShowMessage(true)
       })
       .catch(error => {
         console.error(error)
       })
   }
-  return (
+  return showPage ? (
     <Layout location={location}>
       <Seo title="Login" />
       <div className="form-div">
@@ -59,8 +78,8 @@ const BlogLogin = ({ data, location }) => {
             <label>Email</label>
             <input
               type="email"
-              className="form-control"
-              placeholder="Skriv email"
+              className="form-control loginInput"
+              placeholder="Enter Email"
               value={email}
               onChange={e => setEmail(e.target.value)}
               disabled={isFormSubmitted}
@@ -71,8 +90,8 @@ const BlogLogin = ({ data, location }) => {
             <label>Password</label>
             <input
               type="password"
-              className="form-control"
-              placeholder="Skriv password"
+              className="form-control loginInput"
+              placeholder="Enter Password"
               value={password}
               onChange={e => setPassword(e.target.value)}
               maxLength="12"
@@ -83,14 +102,19 @@ const BlogLogin = ({ data, location }) => {
           <button
             type="submit"
             disabled={!validateForm() || isFormSubmitted}
-            className="btn btn-primary btn-color"
+            className="btn btn-primary loginButton"
           >
             Log ind
           </button>
+          {showMessage ? (
+            <p className="message" style={{ color: messageColor }}>
+              {message}
+            </p>
+          ) : null}
         </form>
       </div>
     </Layout>
-  )
+  ) : null
 }
 
 export default BlogLogin
