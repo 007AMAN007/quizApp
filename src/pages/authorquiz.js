@@ -13,7 +13,7 @@ const BlogAuthorQuiz = ({ data, location }) => {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false)
   const cookies = new Cookies()
   useEffect(async () => {
-    const cookies = new Cookies()
+    //const cookies = new Cookies()
     if (!cookies.get("quizLoggedInUser")) {
       console.log(
         "in authorquiz if => quizLoggedInUser = " +
