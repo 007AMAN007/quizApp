@@ -8,6 +8,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Cookies from "universal-cookie"
+import { navigate } from "gatsby"
 
 const BlogLogin = ({ data, location }) => {
   const [email, setEmail] = useState("")
@@ -25,7 +26,8 @@ const BlogLogin = ({ data, location }) => {
         "in login if => quizLoggedInUser = " + cookies.get("quizLoggedInUser")
       )
       setShowPage(false)
-      window.location.href = "/authorquiz"
+      //window.location.href = "/"
+      navigate("/")
     } else {
       console.log(
         "in login else => quizLoggedInUser = " + cookies.get("quizLoggedInUser")
@@ -65,7 +67,8 @@ const BlogLogin = ({ data, location }) => {
             path: "/",
             maxAge: 31536000,
           })
-          window.location.href = "/authorquiz"
+          //window.location.href = "/"
+          navigate("/")
         }
         setShowMessage(true)
       })
