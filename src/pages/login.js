@@ -21,9 +21,15 @@ const BlogLogin = ({ data, location }) => {
   useEffect(() => {
     const cookies = new Cookies()
     if (cookies.get("quizLoggedInUser")) {
+      console.log(
+        "in login if => quizLoggedInUser = " + cookies.get("quizLoggedInUser")
+      )
       setShowPage(false)
       window.location.href = "/authorquiz"
     } else {
+      console.log(
+        "in login else => quizLoggedInUser = " + cookies.get("quizLoggedInUser")
+      )
       setShowPage(true)
     }
   }, [])
