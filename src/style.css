@@ -340,3 +340,270 @@ a:focus {
   border-radius: 0px !important;
   margin-top: 10px;
 }
+
+#quizCustomForm > div > div > span {
+  border: none;
+  font-weight: 700;
+  color: #700;
+}
+#quizCustomForm > div > div > span:before {
+  /* display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\F06A";
+  margin-right: 5px; */
+}
+
+#quizCustomForm ul li:first-child > span {
+  display: block;
+  margin-top: 10px;
+  font-weight: 700;
+  color: #700;
+}
+
+#quizCustomForm ul li:first-child > span:before {
+  /* display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\F06A";
+  margin-right: 5px; */
+}
+
+#quizCustomForm > div {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 10px 5px;
+}
+
+#quizCustomForm > div > label {
+  font-weight: 700;
+  margin-right: 10px;
+  min-width: 150px;
+  text-align: right;
+  padding: 6px 9px;
+}
+
+#quizCustomForm > div > div {
+  -ms-flex: 1;
+  flex: 1;
+  max-width: 500px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column;
+  position: relative;
+}
+
+#quizCustomForm > div > div > * {
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 16px;
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+}
+
+#quizCustomForm ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#quizCustomForm ul li:first-child {
+  background-image: none;
+  text-align: center;
+}
+
+#quizCustomForm ul li:first-child button {
+  float: none;
+  white-space: nowrap;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 20px;
+  color: #fff;
+  background-image: linear-gradient(#fff, #d5d5d5);
+  border: 1px solid #d5d5d5;
+  color: #000;
+}
+
+#quizCustomForm ul li:first-child button:before {
+  /* display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\F067";
+  margin-right: 5px; */
+}
+
+#quizCustomForm > div button[type="submit"] {
+  white-space: nowrap;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 20px;
+  color: #fff;
+  background-image: linear-gradient(#4f93ce, #285f8f);
+  border: 1px solid #285f8f;
+}
+
+#quizCustomForm > div button[type="button"][disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#quizCustomForm > div button[type="button"] {
+  white-space: nowrap;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 20px;
+  color: #fff;
+  background-image: linear-gradient(#fff, #d5d5d5);
+  border: 1px solid #d5d5d5;
+  color: #000;
+}
+
+#quizCustomForm > div button {
+  margin: 10px;
+}
+
+#quizCustomForm ul li {
+  margin: 0;
+  padding: 15px;
+  background-image: linear-gradient(#efefef, #eee);
+  clear: both;
+}
+
+#quizCustomForm ul li > button {
+  float: right;
+  white-space: nowrap;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 20px;
+  color: #fff;
+  background-image: linear-gradient(#e27c79, #c9302c);
+  border: 1px solid #c9302c;
+  padding: 5px 8px;
+}
+
+#quizCustomForm ul li > button:before {
+  /* display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\F1F8"; */
+}
+
+#quizCustomForm ul li > div {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 10px 5px;
+}
+
+#quizCustomForm ul li > div > label {
+  font-weight: 700;
+  margin-right: 10px;
+  min-width: 150px;
+  text-align: right;
+  padding: 6px 9px;
+}
+
+#quizCustomForm ul li > div > div {
+  -ms-flex: 1;
+  flex: 1;
+  max-width: 500px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column;
+  position: relative;
+}
+
+#quizCustomForm ul li > div > div > * {
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 16px;
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+}
+
+#quizCustomForm ul li > div > div > select {
+  height: 29px;
+}
+
+#quizCustomForm ul li ul li:first-child {
+  background-image: none;
+}
+
+#quizCustomForm ul li ul li {
+  background-image: linear-gradient(#ccefcc, #cec);
+}
+
+#quizCustomForm ul li.error {
+  background-image: linear-gradient(#efcccc, #ecc) !important;
+  text-align: center;
+  font-weight: 700;
+  color: #700;
+}
+
+#quizCustomForm ul li.error:before {
+  /* display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\F06A";
+  margin-right: 5px; */
+}
+
+#quizCustomForm ul li > div > div > span {
+  border: none;
+  font-weight: 700;
+  color: #700;
+}
+
+#quizCustomForm ul li > div > div > span:before {
+  /* display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\F06A";
+  margin-right: 5px; */
+}
+
+#quizCustomForm > div button[type="submit"]:before {
+  /* display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\F1D8";
+  margin-right: 5px; */
+}
+
+.adQuizLink {
+  margin-right: 10px;
+}

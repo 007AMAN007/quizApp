@@ -58,7 +58,8 @@ const BlogIndex = ({ data, location }) => {
           const title = post.frontmatter.title || post.fields.slug
         })}
       </ol>
-      <div>Author Quiz</div>
+      {/* <div>Author Quiz</div> */}
+      <Link to="/quizadd" className="adQuizLink">Add Quiz</Link>
       <button
         type="submit"
         onClick={userLogout}
