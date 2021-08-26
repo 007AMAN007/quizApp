@@ -92,7 +92,9 @@ class QuizForm extends Component {
             type="button"
             title="Remove Answer"
             onClick={() => fields.remove(index)}
-          />
+          >
+            <FaTrashAlt />
+          </button>
           <Field
             name={answer}
             type="text"
