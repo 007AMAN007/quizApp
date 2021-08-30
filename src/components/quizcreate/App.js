@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import QuizForm from "./QuizForm"
 import QuizFormResult from "./QuizFormResult"
 import Cookies from "universal-cookie"
+import { navigate } from "gatsby"
 
 class App extends Component {
   constructor(props) {
@@ -30,6 +31,9 @@ class App extends Component {
             result: jsonResult,
             message: responseJson.message,
           })
+          setTimeout(function () {
+            navigate("/")
+          }, 3000)
         } else {
           this.setState({
             result: "",

@@ -607,3 +607,30 @@ a:focus {
 .adQuizLink {
   margin-right: 10px;
 }
+
+.rightFloat {
+  float: right;
+}
+
+.adQuizLink:hover,
+.adQuizLink:active {
+  background-color: #0a58ca;
+}
+
+.adQuizLink:link,
+.adQuizLink:visited {
+  background-color: #0a58ca;
+  color: white;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.logoutBtn {
+  border-radius: 0px !important;
+}
+
+.quizTable {
+  margin-top: 20px;
+}

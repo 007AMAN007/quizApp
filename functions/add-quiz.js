@@ -1,9 +1,9 @@
 const connection = require("serverless-mysql")({
   config: {
-    host: "sql6.freemysqlhosting.net",
-    database: "sql6431929",
-    user: "sql6431929",
-    password: "EE5PiuZ7uH",
+    host: "remotemysql.com",
+    database: "hDJ7aQHQ1t",
+    user: "hDJ7aQHQ1t",
+    password: "3XNoYKdivk",
   },
 })
 
@@ -26,7 +26,7 @@ exports.handler = async function (event) {
       statusCode: 200,
       body: JSON.stringify({
         error: "0",
-        message: "Quiz created successfully",
+        message: "Quiz created successfully navigating to dashboard",
       }),
     }
   } catch (e) {

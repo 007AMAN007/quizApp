@@ -7,10 +7,12 @@ import Seo from "../components/seo"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Cookies from "universal-cookie"
 import { navigate } from "gatsby"
+import { FaEye, FaEdit, FaTrashAlt, FaRegPaperPlane } from "react-icons/fa"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
+  const [allQuizs, setAllQuizs] = useState(null)
 
   // if (posts.length === 0) {
   //   return (
@@ -28,25 +30,32 @@ const BlogIndex = ({ data, location }) => {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false)
   const cookies = new Cookies()
   useEffect(async () => {
-    //const cookies = new Cookies()
     if (!cookies.get("quizLoggedInUser")) {
       console.log(
         "in authorquiz if => quizLoggedInUser = " +
           cookies.get("quizLoggedInUser")
       )
-      //window.location.href = "/login"
       navigate("/login")
     } else {
-      console.log(
-        "in authorquiz else => quizLoggedInUser = " +
-          cookies.get("quizLoggedInUser")
-      )
+      const email = cookies.get("quizLoggedInUser")
+      await fetch("/.netlify/functions/get-user-quiz", {
+        method: "POST",
+        body: JSON.stringify({ email }),
+      })
+        .then(async response => response.json())
+        .then(async responseJson => {
+          //console.log(responseJson.allquizs[0])
+          // console.log(JSON.parse(responseJson.allquizs[0].quiz).quizTitle)
+          setAllQuizs(responseJson.allquizs)
+        })
+        .catch(error => {
+          console.error(error)
+        })
       setIsUserLoggedIn(true)
     }
   }, [])
   function userLogout() {
     cookies.remove("quizLoggedInUser")
-    //window.location.href = "/login"
     navigate("/login")
   }
 
@@ -59,14 +68,48 @@ const BlogIndex = ({ data, location }) => {
         })}
       </ol>
       {/* <div>Author Quiz</div> */}
-      <Link to="/quizadd" className="adQuizLink">Add Quiz</Link>
-      <button
-        type="submit"
-        onClick={userLogout}
-        className="btn btn-primary btn-color"
-      >
-        Log out
-      </button>
+      <div className="rightFloat">
+        <button
+          type="submit"
+          onClick={userLogout}
+          className="btn btn-primary btn-color logoutBtn"
+        >
+          Log out
+        </button>
+      </div>
+      <div>
+        <Link to="/quizadd" className="adQuizLink">
+          Add New Quiz
+        </Link>
+      </div>
+      <table class="table quizTable">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {allQuizs.map((quiz, index) => (
+            <tr>
+              <th scope="row">{quiz.id}</th>
+              <td>{JSON.parse(quiz.quiz).quizTitle}</td>
+              <td className="row">
+                <a href="#" target="_blank" className="col-md-1">
+                  <FaEye />
+                </a>
+                <a href="#" target="_blank" className="col-md-1">
+                  <FaEdit />
+                </a>
+                <a href="#" target="_blank" className="col-md-1">
+                  <FaTrashAlt />
+                </a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </Layout>
   ) : null
 }

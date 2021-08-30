@@ -39,7 +39,7 @@ class QuizFormResult extends Component {
           <div>
             <div style={style.resultBox}>
               <p>{message}</p>
-              <pre> {result} </pre>
+              {/* <pre> {result} </pre> */}
             </div>
             {/* <div>
               <CopyToClipboard
