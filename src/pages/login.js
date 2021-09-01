@@ -26,8 +26,7 @@ const BlogLogin = ({ data, location }) => {
         "in login if => quizLoggedInUser = " + cookies.get("quizLoggedInUser")
       )
       setShowPage(false)
-      //window.location.href = "/"
-      navigate("/")
+      navigate("/admin")
     } else {
       console.log(
         "in login else => quizLoggedInUser = " + cookies.get("quizLoggedInUser")
@@ -67,8 +66,7 @@ const BlogLogin = ({ data, location }) => {
             path: "/",
             maxAge: 31536000,
           })
-          //window.location.href = "/"
-          navigate("/")
+          navigate("/admin")
         }
         setShowMessage(true)
       })

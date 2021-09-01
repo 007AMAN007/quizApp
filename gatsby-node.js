@@ -72,6 +72,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions
+  if (page.path.toLowerCase() == "/quiz-view/".toLowerCase()) {
+    deletePage(page)
+    createPage({
+      path: "/quiz-view",
+      matchPath: "/quiz-view/*",
+      component: path.resolve(`src/pages/quiz-view.js`),
+    })
+  }
+}
+
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
 

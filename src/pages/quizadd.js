@@ -8,18 +8,6 @@ import { navigate } from "gatsby"
 
 const QuizAdd = ({ data, location }) => {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false)
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     result: null,
-  //   }
-  // }
-
-  // setResult = values => {
-  //   this.setState({
-  //     result: JSON.stringify(values, null, 2),
-  //   })
-  // }
   const cookies = new Cookies()
   useEffect(async () => {
     if (!cookies.get("quizLoggedInUser")) {
@@ -27,7 +15,6 @@ const QuizAdd = ({ data, location }) => {
         "in authorquiz if => quizLoggedInUser = " +
           cookies.get("quizLoggedInUser")
       )
-      //window.location.href = "/login"
       navigate("/login")
     } else {
       console.log(
@@ -38,18 +25,16 @@ const QuizAdd = ({ data, location }) => {
     }
   }, [])
 
-  // render() {
   return isUserLoggedIn ? (
     <div>
-      <Link to="/" className="goHomeLink">
-        Go Home
+      <Link to="/admin" className="goHomeLink">
+        Admin Dashboard
       </Link>
       <Provider store={store}>
         <App />
       </Provider>
     </div>
   ) : null
-  //}
 }
 
 export default QuizAdd
