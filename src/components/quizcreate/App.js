@@ -32,7 +32,7 @@ class App extends Component {
             message: responseJson.message,
           })
           setTimeout(function () {
-            navigate("/")
+            navigate("/admin")
           }, 3000)
         } else {
           this.setState({
