@@ -13,6 +13,7 @@ const BlogAdmin = ({ data, location }) => {
   const [allQuizs, setAllQuizs] = useState(null)
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false)
   const cookies = new Cookies()
+
   useEffect(async () => {
     if (!cookies.get("quizLoggedInUser")) {
       console.log(
@@ -37,8 +38,27 @@ const BlogAdmin = ({ data, location }) => {
     }
   }, [])
   function userLogout() {
-    cookies.remove("quizLoggedInUser")
+    cookies.remove("quizLoggedInUser", { path: "/" })
     navigate("/login")
+  }
+
+  async function deleteQuiz(quizId) {
+    if (window.confirm("Are you sure?")) {
+      await fetch("/.netlify/functions/delete-quiz", {
+        method: "POST",
+        body: JSON.stringify({ quizId }),
+      })
+        .then(async response => response.json())
+        .then(async responseJson => {
+          if (responseJson.error == "0") {
+            alert(responseJson.message)
+            window.location.reload()
+          }
+        })
+        .catch(error => {
+          console.error(error)
+        })
+    }
   }
 
   return isUserLoggedIn ? (
@@ -64,7 +84,7 @@ const BlogAdmin = ({ data, location }) => {
           Add New Quiz
         </Link>
       </div>
-      <table class="table quizTable">
+      <table className="table quizTable">
         <thead>
           <tr>
             <th scope="col">Id</th>
@@ -88,7 +108,11 @@ const BlogAdmin = ({ data, location }) => {
                 <a href="#" target="_blank" className="col-md-1">
                   <FaEdit />
                 </a>
-                <a href="#" target="_blank" className="col-md-1">
+                <a
+                  href="#"
+                  onClick={() => deleteQuiz(quiz.id)}
+                  className="col-md-1"
+                >
                   <FaTrashAlt />
                 </a>
               </td>

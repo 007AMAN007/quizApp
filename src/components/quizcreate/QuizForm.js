@@ -217,7 +217,7 @@ class QuizForm extends Component {
           />
           <FieldArray name="questions" component={this.renderQuestions} />
           <div>
-            <button type="submit" disabled={submitting}>
+            <button type="submit" id="quizAddBtn" disabled={submitting}>
               <FaRegPaperPlane /> Submit
             </button>
             <button

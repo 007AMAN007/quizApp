@@ -14,9 +14,8 @@ class App extends Component {
   }
 
   setResult = async values => {
-    // await this.setState({
-    //   result: JSON.stringify(values, null, 2),
-    // })
+    // const el1 = document.querySelector("#quizAddBtn")
+    // el1.disabled = true
     const cookies = new Cookies()
     const jsonResult = JSON.stringify(values, null, 2)
     const user = cookies.get("quizLoggedInUser")
@@ -31,9 +30,10 @@ class App extends Component {
             result: jsonResult,
             message: responseJson.message,
           })
-          setTimeout(function () {
-            navigate("/admin")
-          }, 3000)
+          alert(responseJson.message)
+          //setTimeout(function () {
+          navigate("/admin")
+          //}, 3000)
         } else {
           this.setState({
             result: "",
