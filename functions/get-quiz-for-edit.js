@@ -8,34 +8,36 @@ const connection = require("serverless-mysql")({
 })
 
 exports.handler = async function (event) {
-  const { email } = JSON.parse(event.body)
-  let allQuizs
+  const { quizId, userId } = JSON.parse(event.body)
+  let quizDetails
   try {
     await connection.connect()
-    allQuizs = await getAllQuizs(connection, email)
+    quizDetails = await getQuizDetail(connection, quizId, userId)
+    await connection.end()
   } catch (e) {
-    console.log(`Some error while fetching = ${e}`)
+    console.log(`User not logged in due to error= ${e}`)
   } finally {
     if (connection) {
       await connection.end()
     }
   }
+
   return {
     statusCode: 200,
     body: JSON.stringify({
       error: "0",
-      allquizs: allQuizs,
+      quizDetails: quizDetails,
     }),
   }
 }
 
-async function getAllQuizs(connection, email) {
+async function getQuizDetail(connection, quizId, userId) {
   return new Promise((resolve, reject) => {
     connection.query(
       {
-        sql: "SELECT * FROM `quizs` WHERE `userid` = ?",
+        sql: "SELECT * FROM `quizs` WHERE `id` = ? AND `userid` = ?",
         timeout: 10000,
-        values: [email],
+        values: [quizId, userId],
       },
       function (error, results, fields) {
         if (error) reject(err)

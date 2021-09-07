@@ -634,3 +634,16 @@ a:focus {
 .quizTable {
   margin-top: 20px;
 }
+
+.editQuiz{
+  text-align: center;
+}
+
+.marginBtm20{
+  margin-bottom: 20px;
+}
+
+.padding200{
+  padding-left: 200px;
+  padding-right: 200px;
+}

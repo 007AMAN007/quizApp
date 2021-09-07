@@ -29,7 +29,9 @@ const BlogAdmin = ({ data, location }) => {
       })
         .then(async response => response.json())
         .then(async responseJson => {
-          setAllQuizs(responseJson.allquizs)
+          if (responseJson.error == "0") {
+            setAllQuizs(responseJson.allquizs)
+          }
         })
         .catch(error => {
           console.error(error)
@@ -105,7 +107,7 @@ const BlogAdmin = ({ data, location }) => {
                 >
                   <FaEye />
                 </a>
-                <a href="#" target="_blank" className="col-md-1">
+                <a href={"/quiz-edit/" + quiz.id} className="col-md-1">
                   <FaEdit />
                 </a>
                 <a

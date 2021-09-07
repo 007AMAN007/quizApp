@@ -82,6 +82,14 @@ exports.onCreatePage = ({ page, actions }) => {
       component: path.resolve(`src/pages/quiz-view.js`),
     })
   }
+  if (page.path.toLowerCase() == "/quiz-edit/".toLowerCase()) {
+    deletePage(page)
+    createPage({
+      path: "/quiz-edit",
+      matchPath: "/quiz-edit/*",
+      component: path.resolve(`src/pages/quiz-edit.js`),
+    })
+  }
 }
 
 exports.createSchemaCustomization = ({ actions }) => {

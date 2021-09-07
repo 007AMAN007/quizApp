@@ -1,9 +1,9 @@
 const connection = require("serverless-mysql")({
   config: {
-    host: "remotemysql.com",
-    database: "hDJ7aQHQ1t",
-    user: "hDJ7aQHQ1t",
-    password: "3XNoYKdivk",
+    host: "sql6.freesqldatabase.com",
+    database: "sql6435212",
+    user: "sql6435212",
+    password: "HthzFaPRWW",
   },
 })
 
