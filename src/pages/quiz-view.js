@@ -31,11 +31,25 @@ const QuizView = ({ data, location }) => {
     }
   }, [])
 
+  function renderCustomResultPage() {
+    return (
+      <div>
+        This is a custom result page. You can use obj to render your custom
+        result page
+      </div>
+    )
+  }
+
   return (
     <Layout location={location}>
       <Seo title="Quiz" />
       {quizJson && resultLoaded ? (
-        <Quiz quiz={quizJson} />
+        <Quiz
+          quiz={quizJson}
+          //showDefaultResult={false}
+          //customResultPage={renderCustomResultPage}
+          showInstantFeedback={true}
+        />
       ) : resultLoaded ? (
         <h5>Quiz not found</h5>
       ) : (
