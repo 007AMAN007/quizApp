@@ -4,6 +4,7 @@ import { navigate } from "gatsby"
 import Quiz from "react-quiz-component"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+//react-buzzfeed-quiz
 
 const QuizView = ({ data, location }) => {
   const [quizJson, setQuizJson] = useState("")
