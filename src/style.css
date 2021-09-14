@@ -241,12 +241,9 @@ a:focus {
 /* Custom classes */
 
 .global-wrapper {
-  /* margin: var(--spacing-0) auto;
+  margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
-  padding: var(--spacing-10) var(--spacing-5); */
-  padding-left: 220px;
-  padding-right: 220px;
-  padding-top: 20px;
+  padding: var(--spacing-10) var(--spacing-5);
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {
@@ -349,33 +346,12 @@ a:focus {
   font-weight: 700;
   color: #700;
 }
-#quizCustomForm > div > div > span:before {
-  /* display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\F06A";
-  margin-right: 5px; */
-}
 
 #quizCustomForm ul li:first-child > span {
   display: block;
   margin-top: 10px;
   font-weight: 700;
   color: #700;
-}
-
-#quizCustomForm ul li:first-child > span:before {
-  /* display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\F06A";
-  margin-right: 5px; */
 }
 
 #quizCustomForm > div {
@@ -439,17 +415,6 @@ a:focus {
   color: #000;
 }
 
-#quizCustomForm ul li:first-child button:before {
-  /* display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\F067";
-  margin-right: 5px; */
-}
-
 #quizCustomForm > div button[type="submit"] {
   white-space: nowrap;
   display: inline-block;
@@ -500,16 +465,6 @@ a:focus {
   background-image: linear-gradient(#e27c79, #c9302c);
   border: 1px solid #c9302c;
   padding: 5px 8px;
-}
-
-#quizCustomForm ul li > button:before {
-  /* display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\F1F8"; */
 }
 
 #quizCustomForm ul li > div {
@@ -568,43 +523,10 @@ a:focus {
   color: #700;
 }
 
-#quizCustomForm ul li.error:before {
-  /* display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\F06A";
-  margin-right: 5px; */
-}
-
 #quizCustomForm ul li > div > div > span {
   border: none;
   font-weight: 700;
   color: #700;
-}
-
-#quizCustomForm ul li > div > div > span:before {
-  /* display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\F06A";
-  margin-right: 5px; */
-}
-
-#quizCustomForm > div button[type="submit"]:before {
-  /* display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\F1D8";
-  margin-right: 5px; */
 }
 
 .adQuizLink {
@@ -652,67 +574,167 @@ a:focus {
 }
 
 .react-quiz-container {
-  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-  padding: 10px;
-  width: 600px !important;
-  background: linear-gradient(
-    204deg,
-    rgb(154, 172, 255) 40%,
-    rgb(167, 68, 222) 100%
-  );
+  width: unset !important;
 }
 
 .tag-container {
   display: none;
 }
 
-.startQuizBtn.btn:hover {
-  /* box-shadow: 0 0 11px rgba(33, 33, 33, 0.2) !important; */
-  font-size: 16px !important;
+.questionWrapperBody h3 {
+  background: linear-gradient(
+    204deg,
+    rgb(154, 172, 255) 40%,
+    rgb(167, 68, 222) 100%
+  );
+  text-align: center;
+  padding: 40px;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
 }
 
-.nextQuestionBtn.btn:hover {
-  font-size: 16px !important;
+.answerBtn:nth-of-type(1) {
+  background: linear-gradient(
+    rgb(153, 52, 170) 0%,
+    rgb(193, 51, 131) 100%
+  ) !important;
 }
 
-.nextQuestionBtn {
-  background-color: white !important;
+.answerBtn:nth-of-type(2) {
+  background: linear-gradient(
+    204deg,
+    rgb(118, 72, 193) 45%,
+    rgb(192, 48, 132) 100%
+  ) !important;
+}
+
+.answerBtn:nth-of-type(3) {
+  background: linear-gradient(
+    204deg,
+    rgb(196, 52, 119) 35%,
+    rgb(233, 88, 77) 100%
+  ) !important;
+}
+
+.answerBtn:nth-of-type(4) {
+  background: linear-gradient(
+    204deg,
+    rgb(231, 97, 90) 35%,
+    rgb(251, 187, 88) 100%
+  ) !important;
 }
 
 .answerBtn {
-  /* background-color: white !important; */
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
   color: white !important;
 }
+
 .answerBtn:hover {
-  /* box-shadow: 0 0 11px rgba(33, 33, 33, 0.2) !important; */
-  font-size: 16px !important;
+  /* pointer-events: all !important;
+  cursor: pointer !important;
+  box-shadow: 0 0 3px 3px hsl(0deg 3% 67% / 10%) !important;
+  -webkit-box-shadow: 0 0 3px 3px hsl(0deg 3% 67% / 10%) !important;
+  font-size: 16px !important; */
+  animation: shake 0.8s !important;
 }
 
-.questionWrapperBody div:nth-child(2) {
-  color: white !important;
-  font-size: 25px !important;
-  font-weight: bold !important;
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(25px);
+  }
+
+  50% {
+    transform: translateX(-25px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
 
-.questionWrapperBody h3 p {
-  color: white !important;
-  font-size: 25px !important;
-  font-weight: bold !important;
+.react-quiz-container .correct {
+  background: green !important;
 }
 
-.react-quiz-container div h2 {
-  color: white !important;
-  font-size: 25px !important;
-  font-weight: bold !important;
+.react-quiz-container .incorrect {
+  background: red !important;
 }
 
-.react-quiz-container div:nth-child(1) {
+.react-quiz-container
+  div:nth-child(1):not(.questionWrapper, .questionWrapperBody, .questionModal, .card-body, .result-answer, .alert) {
+  /* background: linear-gradient(
+    204deg,
+    rgb(154, 172, 255) 40%,
+    rgb(167, 68, 222) 100%
+  );
+  text-align: center;
+  padding: 20px; */
+}
+
+.react-quiz-container h2 {
+  background: linear-gradient(
+    204deg,
+    rgb(154, 172, 255) 40%,
+    rgb(167, 68, 222) 100%
+  );
+  text-align: center;
+  padding: 40px;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+}
+.startQuizBtn {
+  background: linear-gradient(
+    204deg,
+    rgb(77, 104, 215) 35%,
+    rgb(163, 49, 163) 100%
+  ) !important;
   color: white !important;
-  font-size: 25px !important;
-  font-weight: bold !important;
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+  width: 100%;
+}
+
+.startQuizBtn:hover {
+  animation: shake 0.8s !important;
+}
+
+.nextQuestionBtn {
+  background: linear-gradient(
+    204deg,
+    rgb(77, 104, 215) 35%,
+    rgb(163, 49, 163) 100%
+  ) !important;
+  color: white !important;
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+}
+
+.nextQuestionBtn:hover {
+  /* animation: shake 0.8s !important; */
 }
 
 .quiz-synopsis {
+  text-align: center;
+  background: linear-gradient(
+    rgb(153, 52, 170) 0%,
+    rgb(193, 51, 131) 100%
+  ) !important;
+  padding: 20px;
   color: white !important;
-  font-size: 25px !important;
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif !important;
+  /* font-weight: bold; */
+  font-size: 20px;
+}
+
+/* .react-quiz-container div:not([attribute]) div:not([attribute]) {
+  text-align: center;
+} */
+
+.react-quiz-container div:not(.card-body) > :nth-child(2) {
+  /* color: red; */
+  display: none;
 }
