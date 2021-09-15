@@ -629,6 +629,8 @@ a:focus {
 .answerBtn {
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
   color: white !important;
+  border-radius: 0px !important;
+  border: none !important;
 }
 
 .answerBtn:hover {
@@ -697,6 +699,8 @@ a:focus {
   color: white !important;
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
   width: 100%;
+  border-radius: 0px !important;
+  border: none !important;
 }
 
 .startQuizBtn:hover {
@@ -711,6 +715,9 @@ a:focus {
   ) !important;
   color: white !important;
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+  border-radius: 0px !important;
+  width: 100%;
+  border: none !important;
 }
 
 .nextQuestionBtn:hover {
@@ -734,7 +741,22 @@ a:focus {
   text-align: center;
 } */
 
-.react-quiz-container div:not(.card-body) > :nth-child(2) {
+.react-quiz-container div:not(.card-body,.result-answer) > :nth-child(2) {
   /* color: red; */
   display: none;
+}
+
+.explanation {
+  background: linear-gradient(
+    204deg,
+    rgb(154, 172, 255) 40%,
+    rgb(167, 68, 222) 100%
+  );
+  text-align: center;
+  /* padding: 40px; */
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+  border: none !important;
 }
