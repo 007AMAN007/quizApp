@@ -665,10 +665,16 @@ a:focus {
 
 .react-quiz-container .correct {
   background: green !important;
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .react-quiz-container .incorrect {
   background: red !important;
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .react-quiz-container
@@ -788,6 +794,7 @@ a:focus {
   font-weight: bold;
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
   border-radius: 0px !important;
+  opacity: unset !important;
 }
 
 .result-answer-wrapper{
@@ -797,4 +804,8 @@ a:focus {
 
 .result-answer{
   padding: 0px !important;
+}
+
+.quiz-result-filter{
+  display: none;
 }
