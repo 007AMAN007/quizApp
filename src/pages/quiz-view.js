@@ -13,6 +13,13 @@ const QuizView = ({ data, location }) => {
   const appLocale = {
     appLocale: {
       nextQuestionBtn: <FaArrowRight />,
+      "landingHeaderText": "<questionLength> Questions",
+      "question": "Spørgsmål",
+      "startQuizBtn": "Start Quiz",
+      "resultFilterAll": "All",
+      "resultFilterCorrect": "Correct",
+      "resultFilterIncorrect": "Incorrect",
+      "resultPageHeaderText": "Du har besvaret quizzen. Du fik <correctIndexLength> ud af <questionLength> spørgsmål."
     },
   }
 
