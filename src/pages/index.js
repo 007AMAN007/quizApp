@@ -58,7 +58,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="All Quizs" />
-      <h5>HOME PAGE OF QUIZ APP</h5>
+      <h5>Her er tepedu tests</h5>
     </Layout>
   )
 }

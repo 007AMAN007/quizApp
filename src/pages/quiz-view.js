@@ -19,7 +19,7 @@ const QuizView = ({ data, location }) => {
       "resultFilterAll": "All",
       "resultFilterCorrect": "Correct",
       "resultFilterIncorrect": "Incorrect",
-      "resultPageHeaderText": "Du har besvaret quizzen. Du fik <correctIndexLength> ud af <questionLength> spørgsmål."
+      "resultPageHeaderText": "Du har besvaret quizzen. Du havde <correctIndexLength> korrekte svar, der var <questionLength> spørgsmål."
     },
   }
 
