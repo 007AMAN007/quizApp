@@ -5,10 +5,16 @@ import Quiz from "react-quiz-component"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 //react-buzzfeed-quiz
+import { FaArrowAltCircleRight, FaArrowRight } from "react-icons/fa"
 
 const QuizView = ({ data, location }) => {
   const [quizJson, setQuizJson] = useState("")
   const [resultLoaded, setResultLoaded] = useState(false)
+  const appLocale = {
+    appLocale: {
+      nextQuestionBtn: <FaArrowRight />,
+    },
+  }
 
   useEffect(async () => {
     const pathname = location.pathname
@@ -21,8 +27,12 @@ const QuizView = ({ data, location }) => {
       })
         .then(async response => response.json())
         .then(async responseJson => {
+          const obj1 = JSON.parse(responseJson.quizDetails[0].quiz)
+          const obj2 = appLocale
+          var mergedObj = { ...obj1, ...obj2 }
+          console.log(mergedObj)
           setResultLoaded(true)
-          setQuizJson(JSON.parse(responseJson.quizDetails[0].quiz))
+          setQuizJson(mergedObj)
         })
         .catch(error => {
           console.error(error)

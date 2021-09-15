@@ -582,11 +582,12 @@ a:focus {
 }
 
 .questionWrapperBody h3 {
-  background: linear-gradient(
+  /* background: linear-gradient(
     204deg,
     rgb(154, 172, 255) 40%,
     rgb(167, 68, 222) 100%
-  );
+  ); */
+  background: grey;
   text-align: center;
   padding: 40px;
   color: white;
@@ -596,34 +597,38 @@ a:focus {
 }
 
 .answerBtn:nth-of-type(1) {
-  background: linear-gradient(
+  /* background: linear-gradient(
     rgb(153, 52, 170) 0%,
     rgb(193, 51, 131) 100%
-  ) !important;
+  ) !important; */
+  background: grey !important;
 }
 
 .answerBtn:nth-of-type(2) {
-  background: linear-gradient(
+  /* background: linear-gradient(
     204deg,
     rgb(118, 72, 193) 45%,
     rgb(192, 48, 132) 100%
-  ) !important;
+  ) !important; */
+  background: grey !important;
 }
 
 .answerBtn:nth-of-type(3) {
-  background: linear-gradient(
+  /* background: linear-gradient(
     204deg,
     rgb(196, 52, 119) 35%,
     rgb(233, 88, 77) 100%
-  ) !important;
+  ) !important; */
+  background: grey !important;
 }
 
 .answerBtn:nth-of-type(4) {
-  background: linear-gradient(
+  /* background: linear-gradient(
     204deg,
     rgb(231, 97, 90) 35%,
     rgb(251, 187, 88) 100%
-  ) !important;
+  ) !important; */
+  background: grey !important;
 }
 
 .answerBtn {
@@ -678,11 +683,12 @@ a:focus {
 }
 
 .react-quiz-container h2 {
-  background: linear-gradient(
+  /* background: linear-gradient(
     204deg,
     rgb(154, 172, 255) 40%,
     rgb(167, 68, 222) 100%
-  );
+  ); */
+  background: grey !important;
   text-align: center;
   padding: 40px;
   color: white;
@@ -691,11 +697,12 @@ a:focus {
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
 }
 .startQuizBtn {
-  background: linear-gradient(
+  /* background: linear-gradient(
     204deg,
     rgb(77, 104, 215) 35%,
     rgb(163, 49, 163) 100%
-  ) !important;
+  ) !important; */
+  background: grey !important;
   color: white !important;
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
   width: 100%;
@@ -708,16 +715,19 @@ a:focus {
 }
 
 .nextQuestionBtn {
-  background: linear-gradient(
+  /* background: linear-gradient(
     204deg,
     rgb(77, 104, 215) 35%,
     rgb(163, 49, 163) 100%
-  ) !important;
+  ) !important; */
+  background: grey !important;
   color: white !important;
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
   border-radius: 0px !important;
-  width: 100%;
-  border: none !important;
+  /* width: 100%; */
+  /* border-radius: 40% !important; */
+  float: right;
+  /* border: none !important; */
 }
 
 .nextQuestionBtn:hover {
@@ -726,10 +736,11 @@ a:focus {
 
 .quiz-synopsis {
   text-align: center;
-  background: linear-gradient(
+  /* background: linear-gradient(
     rgb(153, 52, 170) 0%,
     rgb(193, 51, 131) 100%
-  ) !important;
+  ) !important; */
+  background: grey !important;
   padding: 20px;
   color: white !important;
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif !important;
@@ -747,11 +758,12 @@ a:focus {
 }
 
 .explanation {
-  background: linear-gradient(
+  /* background: linear-gradient(
     204deg,
     rgb(154, 172, 255) 40%,
     rgb(167, 68, 222) 100%
-  );
+  ); */
+  background: grey !important;
   text-align: center;
   /* padding: 40px; */
   color: white;
@@ -763,11 +775,12 @@ a:focus {
 }
 
 .result-answer-wrapper h3{
-  background: linear-gradient(
+  /* background: linear-gradient(
     204deg,
     rgb(154, 172, 255) 40%,
     rgb(167, 68, 222) 100%
-  );
+  ); */
+  background: grey !important;
   text-align: center;
   padding: 40px;
   color: white !important;
