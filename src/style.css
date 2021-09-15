@@ -759,4 +759,29 @@ a:focus {
   font-weight: bold;
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
   border: none !important;
+  margin: 0px !important;
+}
+
+.result-answer-wrapper h3{
+  background: linear-gradient(
+    204deg,
+    rgb(154, 172, 255) 40%,
+    rgb(167, 68, 222) 100%
+  );
+  text-align: center;
+  padding: 40px;
+  color: white !important;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
+  border-radius: 0px !important;
+}
+
+.result-answer-wrapper{
+  border-radius: 0px !important;
+  border: none !important;
+}
+
+.result-answer{
+  padding: 0px !important;
 }
