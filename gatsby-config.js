@@ -113,12 +113,12 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Tepedu Quiz App`,
-        short_name: `GatsbyJS`,
+        short_name: `Quiz App`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`,
       },
     },
     `gatsby-plugin-react-helmet`,

@@ -159,9 +159,9 @@ class QuizForm extends Component {
             component={this.renderSelectQuestionTypeField}
             label="Question Type"
           >
-            <option value="">Please select a question type</option>
-            <option value="text">Text</option>
-            <option value="photo">Photo</option>
+            {/* <option value="">Please select a question type</option> */}
+            <option value="text" selected>Text</option>
+            {/* <option value="photo">Photo</option> */}
           </Field>
           <FieldArray
             name={`${question}.answers`}
@@ -186,12 +186,12 @@ class QuizForm extends Component {
             component={this.renderTextareaField}
             label="Explanation"
           />
-          <Field
+          {/* <Field
             name={`${question}.point`}
             type="number"
             component={this.renderInputField}
             label="Point"
-          />
+          /> */}
         </li>
       ))}
     </ul>

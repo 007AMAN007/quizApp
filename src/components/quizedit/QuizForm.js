@@ -180,9 +180,9 @@ class QuizForm extends Component {
             component={this.renderSelectQuestionTypeField}
             label="Question Type"
           >
-            <option value="">Please select a question type</option>
-            <option value="text">Text</option>
-            <option value="photo">Photo</option>
+            {/* <option value="">Please select a question type</option> */}
+            <option value="text" selected>Text</option>
+            {/* <option value="photo">Photo</option> */}
           </Field>
           <FieldArray
             name={`${question}.answers`}
@@ -209,12 +209,12 @@ class QuizForm extends Component {
             component={this.renderTextareaField}
             label="Explanation"
           />
-          <Field
+          {/* <Field
             name={`questions[${index}].point`}
             type="number"
             component={this.renderInputField}
             label="Point"
-          />
+          /> */}
         </li>
       ))}
     </ul>
@@ -258,7 +258,7 @@ class QuizForm extends Component {
           quizJson.questions[i].explanation
         )
 
-        this.props.change(`questions[${i}].point`, quizJson.questions[i].point)
+        //this.props.change(`questions[${i}].point`, quizJson.questions[i].point)
 
         for (let j = 0; j < quizJson.questions[i].answers.length; j++) {
           this.props.change(
