@@ -455,7 +455,7 @@ a:focus {
 }
 
 #quizCustomForm ul li > button {
-  float: right;
+  /* float: right; */
   white-space: nowrap;
   display: inline-block;
   border-radius: 5px;
@@ -582,11 +582,6 @@ a:focus {
 }
 
 .questionWrapperBody h3 {
-  /* background: linear-gradient(
-    204deg,
-    rgb(154, 172, 255) 40%,
-    rgb(167, 68, 222) 100%
-  ); */
   background: grey;
   text-align: center;
   padding: 40px;
@@ -597,37 +592,18 @@ a:focus {
 }
 
 .answerBtn:nth-of-type(1) {
-  /* background: linear-gradient(
-    rgb(153, 52, 170) 0%,
-    rgb(193, 51, 131) 100%
-  ) !important; */
   background: grey !important;
 }
 
 .answerBtn:nth-of-type(2) {
-  /* background: linear-gradient(
-    204deg,
-    rgb(118, 72, 193) 45%,
-    rgb(192, 48, 132) 100%
-  ) !important; */
   background: grey !important;
 }
 
 .answerBtn:nth-of-type(3) {
-  /* background: linear-gradient(
-    204deg,
-    rgb(196, 52, 119) 35%,
-    rgb(233, 88, 77) 100%
-  ) !important; */
   background: grey !important;
 }
 
 .answerBtn:nth-of-type(4) {
-  /* background: linear-gradient(
-    204deg,
-    rgb(231, 97, 90) 35%,
-    rgb(251, 187, 88) 100%
-  ) !important; */
   background: grey !important;
 }
 
@@ -639,11 +615,6 @@ a:focus {
 }
 
 .answerBtn:hover {
-  /* pointer-events: all !important;
-  cursor: pointer !important;
-  box-shadow: 0 0 3px 3px hsl(0deg 3% 67% / 10%) !important;
-  -webkit-box-shadow: 0 0 3px 3px hsl(0deg 3% 67% / 10%) !important;
-  font-size: 16px !important; */
   animation: shake 0.8s !important;
 }
 
@@ -677,23 +648,7 @@ a:focus {
   font-weight: 600;
 }
 
-.react-quiz-container
-  div:nth-child(1):not(.questionWrapper, .questionWrapperBody, .questionModal, .card-body, .result-answer, .alert) {
-  /* background: linear-gradient(
-    204deg,
-    rgb(154, 172, 255) 40%,
-    rgb(167, 68, 222) 100%
-  );
-  text-align: center;
-  padding: 20px; */
-}
-
 .react-quiz-container h2 {
-  /* background: linear-gradient(
-    204deg,
-    rgb(154, 172, 255) 40%,
-    rgb(167, 68, 222) 100%
-  ); */
   background: grey !important;
   text-align: center;
   padding: 40px;
@@ -703,11 +658,6 @@ a:focus {
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
 }
 .startQuizBtn {
-  /* background: linear-gradient(
-    204deg,
-    rgb(77, 104, 215) 35%,
-    rgb(163, 49, 163) 100%
-  ) !important; */
   background: grey !important;
   color: white !important;
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
@@ -721,45 +671,23 @@ a:focus {
 }
 
 .nextQuestionBtn {
-  /* background: linear-gradient(
-    204deg,
-    rgb(77, 104, 215) 35%,
-    rgb(163, 49, 163) 100%
-  ) !important; */
   background: grey !important;
   color: white !important;
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
   border-radius: 0px !important;
-  /* width: 100%; */
-  /* border-radius: 40% !important; */
   float: right;
-  /* border: none !important; */
-}
-
-.nextQuestionBtn:hover {
-  /* animation: shake 0.8s !important; */
 }
 
 .quiz-synopsis {
   text-align: center;
-  /* background: linear-gradient(
-    rgb(153, 52, 170) 0%,
-    rgb(193, 51, 131) 100%
-  ) !important; */
   background: grey !important;
   padding: 20px;
   color: white !important;
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif !important;
-  /* font-weight: bold; */
   font-size: 20px;
 }
 
-/* .react-quiz-container div:not([attribute]) div:not([attribute]) {
-  text-align: center;
-} */
-
-.react-quiz-container div:not(.card-body,.result-answer) > :nth-child(2) {
-  /* color: red; */
+.react-quiz-container div:not(.card-body, .result-answer) > :nth-child(2) {
   display: none;
 }
 
@@ -768,14 +696,8 @@ a:focus {
 }
 
 .explanation {
-  /* background: linear-gradient(
-    204deg,
-    rgb(154, 172, 255) 40%,
-    rgb(167, 68, 222) 100%
-  ); */
   background: grey !important;
   text-align: center;
-  /* padding: 40px; */
   color: white;
   font-size: 20px;
   font-weight: bold;
@@ -784,12 +706,7 @@ a:focus {
   margin: 0px !important;
 }
 
-.result-answer-wrapper h3{
-  /* background: linear-gradient(
-    204deg,
-    rgb(154, 172, 255) 40%,
-    rgb(167, 68, 222) 100%
-  ); */
+.result-answer-wrapper h3 {
   background: grey !important;
   text-align: center;
   padding: 40px;
@@ -801,15 +718,26 @@ a:focus {
   opacity: unset !important;
 }
 
-.result-answer-wrapper{
+.result-answer-wrapper {
   border-radius: 0px !important;
   border: none !important;
 }
 
-.result-answer{
+.result-answer {
   padding: 0px !important;
 }
 
-.quiz-result-filter{
+.quiz-result-filter {
   display: none;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .card-body > h2 {
+    font-size: 18px;
+    padding: 25px;
+  }
+
+  .result-answer-wrapper h3 {
+    font-size: 18px;
+  }
 }

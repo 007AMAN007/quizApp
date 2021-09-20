@@ -100,20 +100,16 @@ const BlogAdmin = ({ data, location }) => {
               <th scope="row">{quiz.id}</th>
               <td>{JSON.parse(quiz.quiz).quizTitle}</td>
               <td className="row">
-                <a
-                  href={"/quiz-view/" + quiz.id}
-                  target="_blank"
-                  className="col-md-1"
-                >
+                <a href={"/" + quiz.id} target="_blank" className="col-md-3">
                   <FaEye />
                 </a>
-                <a href={"/quiz-edit/" + quiz.id} className="col-md-1">
+                <a href={"/quiz-edit/" + quiz.id} className="col-md-3">
                   <FaEdit />
                 </a>
                 <a
                   href="#"
                   onClick={() => deleteQuiz(quiz.id)}
-                  className="col-md-1"
+                  className="col-md-3"
                 >
                   <FaTrashAlt />
                 </a>

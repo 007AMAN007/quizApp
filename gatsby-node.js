@@ -78,7 +78,7 @@ exports.onCreatePage = ({ page, actions }) => {
     deletePage(page)
     createPage({
       path: "/quiz-view",
-      matchPath: "/quiz-view/*",
+      matchPath: "/*",
       component: path.resolve(`src/pages/quiz-view.js`),
     })
   }

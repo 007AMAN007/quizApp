@@ -151,7 +151,7 @@ class QuizForm extends Component {
           <Field
             name={`${question}.question`}
             type="text"
-            component={this.renderInputField}
+            component={this.renderTextareaField}
             label="Question Title"
           />
           <Field

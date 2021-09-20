@@ -13,20 +13,20 @@ const QuizView = ({ data, location }) => {
   const appLocale = {
     appLocale: {
       nextQuestionBtn: <FaArrowRight />,
-      "landingHeaderText": "<questionLength> Questions",
-      "question": "Spørgsmål",
-      "startQuizBtn": "Start Quiz",
-      "resultFilterAll": "All",
-      "resultFilterCorrect": "Correct",
-      "resultFilterIncorrect": "Incorrect",
-      "resultPageHeaderText": "Du har besvaret quizzen. Du havde <correctIndexLength> korrekte svar, der var <questionLength> spørgsmål."
+      landingHeaderText: "<questionLength> Questions",
+      question: "Spørgsmål",
+      startQuizBtn: "Start Quiz",
+      resultFilterAll: "All",
+      resultFilterCorrect: "Correct",
+      resultFilterIncorrect: "Incorrect",
+      resultPageHeaderText:
+        "Du har besvaret quizzen. Du havde <correctIndexLength> korrekte svar, der var <questionLength> spørgsmål.",
     },
   }
 
   useEffect(async () => {
     const pathname = location.pathname
-    const quizId = pathname.split("/")[2]
-    console.log("quizId = " + quizId)
+    const quizId = pathname.split("/")[1]
     if (quizId) {
       await fetch("/.netlify/functions/get-quiz", {
         method: "POST",
@@ -34,12 +34,16 @@ const QuizView = ({ data, location }) => {
       })
         .then(async response => response.json())
         .then(async responseJson => {
-          const obj1 = JSON.parse(responseJson.quizDetails[0].quiz)
-          const obj2 = appLocale
-          var mergedObj = { ...obj1, ...obj2 }
-          console.log(mergedObj)
-          setResultLoaded(true)
-          setQuizJson(mergedObj)
+          if (!responseJson.quizDetails[0]) {
+            setResultLoaded(true)
+          } else {
+            const obj1 = JSON.parse(responseJson.quizDetails[0].quiz)
+            const obj2 = appLocale
+            var mergedObj = { ...obj1, ...obj2 }
+            console.log(mergedObj)
+            setResultLoaded(true)
+            setQuizJson(mergedObj)
+          }
         })
         .catch(error => {
           console.error(error)
