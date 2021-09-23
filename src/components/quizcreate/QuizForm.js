@@ -29,7 +29,7 @@ class QuizForm extends Component {
     <div>
       <label>{label}</label>
       <div>
-        <textarea {...input} type={type} placeholder={label} />
+        <textarea {...input} type={type} e placeholder={label} />
         {touched && error && (
           <span>
             <FaExclamationCircle /> {error}
@@ -152,17 +152,22 @@ class QuizForm extends Component {
             name={`${question}.question`}
             type="text"
             component={this.renderTextareaField}
-            label="Question Title"
+            label="Question"
           />
-          <Field
+          {/* <Field
             name={`${question}.questionType`}
             component={this.renderSelectQuestionTypeField}
-            label="Question Type"
-          >
-            {/* <option value="">Please select a question type</option> */}
-            <option value="text" selected>Text</option>
-            {/* <option value="photo">Photo</option> */}
-          </Field>
+          > */}
+          {/* <option value="">Please select a question type</option> */}
+          {/* <option value="text" selected>Text</option> */}
+          {/* <option value="photo">Photo</option> */}
+          {/* </Field> */}
+          {/* <input
+            name={`${question}.questionType`}
+            component={this.renderSelectQuestionTypeField}
+            type="hidden"
+            value="text"
+          /> */}
           <FieldArray
             name={`${question}.answers`}
             component={this.renderTextAnswers}

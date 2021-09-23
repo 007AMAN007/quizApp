@@ -384,8 +384,8 @@ a:focus {
 }
 
 #quizCustomForm > div > div > * {
-  -ms-flex: 1;
-  flex: 1;
+  /* -ms-flex: 1;
+  flex: 1; */
   font-size: 16px;
   padding: 5px 8px;
   border: 1px solid #ccc;
@@ -497,15 +497,11 @@ a:focus {
 }
 
 #quizCustomForm ul li > div > div > * {
-  -ms-flex: 1;
-  flex: 1;
+  /* -ms-flex: 1;
+  flex: 1; */
   font-size: 16px;
   padding: 5px 8px;
   border: 1px solid #ccc;
-}
-
-#quizCustomForm ul li > div > div > select {
-  height: 29px;
 }
 
 #quizCustomForm ul li ul li:first-child {
@@ -586,12 +582,12 @@ a:focus {
   text-align: center;
   padding: 40px;
   color: white;
-  font-size: 25px;
+  font-size: 15px;
   font-weight: bold;
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
 }
 
-.answerBtn:nth-of-type(1) {
+/* .answerBtn:nth-of-type(1) {
   background: grey !important;
 }
 
@@ -605,13 +601,14 @@ a:focus {
 
 .answerBtn:nth-of-type(4) {
   background: grey !important;
-}
+} */
 
 .answerBtn {
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
   color: white !important;
   border-radius: 0px !important;
   border: none !important;
+  background: grey !important;
 }
 
 .answerBtn:hover {
@@ -699,7 +696,7 @@ a:focus {
   background: grey !important;
   text-align: center;
   color: white;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
   border: none !important;
@@ -711,7 +708,7 @@ a:focus {
   text-align: center;
   padding: 40px;
   color: white !important;
-  font-size: 25px;
+  font-size: 15px;
   font-weight: bold;
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
   border-radius: 0px !important;
@@ -738,6 +735,6 @@ a:focus {
   }
 
   .result-answer-wrapper h3 {
-    font-size: 18px;
+    font-size: 15px;
   }
 }

@@ -14,11 +14,16 @@ class App extends Component {
   }
 
   setResult = async values => {
-    // const el1 = document.querySelector("#quizAddBtn")
-    // el1.disabled = true
     const cookies = new Cookies()
+    //const n = values.questions.map(v => ({ ...v, questionType: "text" }))
+    //console.log("ddjj")
+    values.questions.map(obj => {
+      obj["questionType"] = "text"
+    })
+    //console.log(values)
     const jsonResult = JSON.stringify(values, null, 2)
     const user = cookies.get("quizLoggedInUser")
+
     await fetch("/.netlify/functions/add-quiz", {
       method: "POST",
       body: JSON.stringify({ jsonResult, user }),
@@ -31,9 +36,7 @@ class App extends Component {
             message: responseJson.message,
           })
           alert(responseJson.message)
-          //setTimeout(function () {
           navigate("/admin")
-          //}, 3000)
         } else {
           this.setState({
             result: "",

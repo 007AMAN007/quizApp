@@ -173,17 +173,17 @@ class QuizForm extends Component {
             name={`questions[${index}].question`}
             type="text"
             component={this.renderTextareaField}
-            label="Question Title"
+            label="Question"
           />
-          <Field
+          {/* <Field
             name={`questions[${index}].questionType`}
             component={this.renderSelectQuestionTypeField}
             label="Question Type"
-          >
+          > */}
             {/* <option value="">Please select a question type</option> */}
-            <option value="text" selected>Text</option>
+            {/* <option value="text" selected>Text</option> */}
             {/* <option value="photo">Photo</option> */}
-          </Field>
+          {/* </Field> */}
           <FieldArray
             name={`${question}.answers`}
             component={this.renderTextAnswers}

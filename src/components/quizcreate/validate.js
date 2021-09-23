@@ -16,7 +16,7 @@ const validate = values => {
         if (!question.questionType){
           questionErrors.questionType =  'Required';
           questionsArrayErrors[questionIndex] = questionErrors;
-          
+
         }
 
       if (question && question.answers && question.answers.length) {
@@ -32,13 +32,13 @@ const validate = values => {
           questionsArrayErrors[questionIndex] = questionErrors
         }
 
-        if (question.answers.length > 4) {
-          if (!questionErrors.answers) {
-            questionErrors.answers = []
-          }
-          questionErrors.answers._error = 'No more than four answers allowed'
-          questionsArrayErrors[questionIndex] = questionErrors
-        }
+        // if (question.answers.length > 4) {
+        //   if (!questionErrors.answers) {
+        //     questionErrors.answers = []
+        //   }
+        //   questionErrors.answers._error = 'No more than four answers allowed'
+        //   questionsArrayErrors[questionIndex] = questionErrors
+        // }
         if (!question.correctAnswer){
           questionErrors.correctAnswer =  'Required';
           questionsArrayErrors[questionIndex] = questionErrors;
