@@ -737,4 +737,8 @@ a:focus {
   .result-answer-wrapper h3 {
     font-size: 15px;
   }
+
+  .quiz-synopsis {
+    font-size: 15px;
+  }
 }
